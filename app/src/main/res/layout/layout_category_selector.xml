@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TODO indicate the selected category with darker background `bg_category_selected` -->
+    <!-- Indicate the selected category with darker background `bg_category_selected` -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:id="@+id/personalBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_category_unselected"
+            android:background="@drawable/bg_category_selected" <!-- Change background to indicate selected -->
             android:paddingHorizontal="16dp"
             android:paddingVertical="8dp"
             android:text="@string/personal"

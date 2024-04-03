@@ -9,8 +9,7 @@
     android:focusable="true"
     android:padding="8dp">
 
-    <!-- TODO: change the icon image based on status -->
-
+    <!-- Change the icon image based on status -->
     <ImageView
         android:id="@+id/checkIc"
         android:layout_width="20dp"
@@ -18,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/check_off" />
+        app:srcCompat="@drawable/check_on" /> <!-- Change this line to @drawable/check_on for checked state -->
 
     <TextView
         android:id="@+id/title"

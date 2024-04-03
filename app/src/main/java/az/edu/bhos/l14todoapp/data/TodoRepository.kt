@@ -2,7 +2,6 @@ package az.edu.bhos.l14todoapp.data
 
 import az.edu.bhos.l14todoapp.entities.TodoEntity
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 
 interface TodoRepository {
@@ -21,9 +20,8 @@ class TodoRepositoryImpl(
     }
 
     override fun observeTodoEntries(): Flow<List<TodoEntity>> {
-        return flowOf(emptyList())
-
-        // todo use the following line with correct mapper
-//        return localData.observeItems()
+        return localData.observeItems().map { list ->
+            list.map { it.toEntity() }
+        }
     }
 }

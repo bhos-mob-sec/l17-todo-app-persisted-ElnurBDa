@@ -2,7 +2,8 @@ package az.edu.bhos.l14todoapp.data
 
 import az.edu.bhos.l14todoapp.data.dto.TodoLocalDto
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 
 interface TodoLocalData {
     fun observeItems(): Flow<List<TodoLocalDto>>
@@ -14,16 +15,10 @@ class TodoLocalDataImpl(
 ) : TodoLocalData {
 
     override fun observeItems(): Flow<List<TodoLocalDto>> {
-        // TODO: use todoDao
-        // TODO: return the items by `weekday` order (Monday, Tue, Wed..)
-        return flowOf(emptyList())
+        return todoDao.getAllTodosOrderedByWeekday()
     }
 
     override suspend fun save(data: List<TodoLocalDto>) {
-        // TODO: use todoDao
-
-        // TODO: make sure your insert query will not cause conflict
-        //  (you will experience this on second insert attempt)
+        todoDao.insertTodos(data)
     }
-
 }
